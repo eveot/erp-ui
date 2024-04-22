@@ -1,7 +1,7 @@
-import React, {JSX, useState} from "react";
-import './Modal.less';
-import Input from "../Input";
+import { JSX, useState } from "react";
 import Button from "../Button";
+import Input from "../Input";
+import './Modal.scss';
 
 export interface ModalProps {
   title: string | JSX.Element;

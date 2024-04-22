@@ -1,5 +1,5 @@
-import React, {JSX, useState} from "react";
-import './Dropdown.less';
+import { JSX, useState } from "react";
+import './Dropdown.scss';
 
 export interface TooltipProps {
   children: string | JSX.Element;

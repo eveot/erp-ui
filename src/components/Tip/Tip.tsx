@@ -1,5 +1,5 @@
-import React, {JSX} from "react";
-import './Tip.less';
+import { JSX } from "react";
+import './Tip.scss';
 
 export interface TipProps {
   text: string[]

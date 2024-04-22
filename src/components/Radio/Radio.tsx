@@ -1,5 +1,4 @@
-import React from "react";
-import  './Radio.less'
+import './Radio.scss';
 
 export interface RadioProps {
   isActive: boolean;

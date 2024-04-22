@@ -1,5 +1,5 @@
-import React, {JSX, useState} from "react";
-import './Tooltip.less';
+import { JSX, useState } from "react";
+import './Tooltip.scss';
 
 export interface TooltipProps {
   children: string | JSX.Element

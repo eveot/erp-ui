@@ -1,5 +1,4 @@
-import React from "react";
-import './Button.less';
+import './Button.scss';
 
 export interface ButtonProps {
   children: string | JSX.Element | JSX.Element[];

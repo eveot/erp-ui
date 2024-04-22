@@ -1,6 +1,5 @@
-import React from "react";
-import  './Checkbox.less'
-import {IconCheckbox} from "../Icons/Icons";
+import { IconCheckbox } from "../Icons/Icons";
+import './Checkbox.scss';
 
 export interface ButtonProps {
   onClick: () => void;

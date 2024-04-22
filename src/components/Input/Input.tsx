@@ -1,5 +1,5 @@
-import React, {ChangeEvent} from "react";
-import  './Input.less'
+import { ChangeEvent } from "react";
+import './Input.scss';
 
 export interface ButtonProps {
   onChange: (value: ChangeEvent<HTMLInputElement>) => void;
