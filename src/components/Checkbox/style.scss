@@ -3,7 +3,7 @@
 .ev-checkbox {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
   cursor: pointer;
   font-size: 0.875rem;
   transition: .3s;
@@ -22,11 +22,14 @@
     transition: .3s;
   }
 
+  @extend %style;
+}
+
+%style {
   &[data-style="dark"] {
     color: $ev--b-000;
 
     .ev-checkbox-mark {
-      border-radius: 0.34725rem;
       border: 1px solid var(--B-300, #242629);
       background: var(--B-400, #1B1D20);
     }
@@ -35,15 +38,52 @@
       border: 1px solid var(--B-200, #515356);
       background: var(--B-300, #242629);
     }
+
+    &[data-active="true"]:not([data-disabled="true"]) .ev-checkbox-mark {
+      @extend %active;
+    }
+
+    &[data-disabled="true"] {
+      color: $ev--b-200;
+      pointer-events: none;
+
+      .ev-checkbox-mark {
+        border: 1px solid $ev--b-400;
+        background: $ev--b-700;
+      }
+    }
   }
 
-  &[data-active="true"] {
+  &[data-style="light"] {
+    color: $ev--b-300;
+
     .ev-checkbox-mark {
-      background: $ev--p-400;
+      border: 1px solid #CBCBCB;
+      background: var(--B-100, #D7D7D7);
     }
 
     &:hover .ev-checkbox-mark {
-      background: $ev--p-400;
+      background: $ev--p-500;
+      border: 1px solid $ev--p-000;
+    }
+
+    &[data-active="true"]:not([data-disabled="true"]) .ev-checkbox-mark {
+      @extend %active;
+    }
+
+    &[data-disabled="true"] {
+      color: $ev--b-100;
+      pointer-events: none;
+
+      .ev-checkbox-mark {
+        border: 1px solid $ev--b-100;
+        background: $ev--b-100;
+      }
     }
   }
+}
+
+%active {
+  background: $ev--p-500;
+  border: 1px solid $ev--p-400;
 }

@@ -10,6 +10,12 @@ export default defineConfig({
       '@components': path.resolve(__dirname, './src/components'),
       '@legacycomponents': path.resolve(__dirname, './src/legacycomponents'),
       '@assets': path.resolve(__dirname, './src/assets'),
+      '@utils': path.resolve(__dirname, './src/utils'),
+    }
+  },
+  server: {
+    fs: {
+      cachedChecks: false
     }
   }
 })
