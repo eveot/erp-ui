@@ -32,7 +32,7 @@ export const Checkbox: FC<PropsWithChildren<CheckboxProps>> = ({
       onClick={onClick}
     >
       <div className="ev-checkbox-mark">
-        <Icon name='TbCheck' color={iconColor} />
+        <Icon name='TbCheck' color={ iconColor } />
       </div>
       { children }
     </div>

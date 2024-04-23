@@ -14,6 +14,6 @@ export type IconColorVariants = {
  * @param variant priority works
  */
 export const getIconColor = (variants: IconColorVariants) => {
-  const color = Object.keys(variants).find(key => variants[key].value)
+  const color = Object.keys(variants).find(key => variants[key].value === true && variants[key].color)
   return color ? variants[color].color : 'currentColor'
 }
