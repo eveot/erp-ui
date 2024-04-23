@@ -1,0 +1,49 @@
+@import "@assets/styles/app.scss";
+
+.ev-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: .3s;
+
+  svg {
+    transition: .3s;
+  }
+
+  &-mark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.348rem;
+    transition: .3s;
+  }
+
+  &[data-style="dark"] {
+    color: $ev--b-000;
+
+    .ev-checkbox-mark {
+      border-radius: 0.34725rem;
+      border: 1px solid var(--B-300, #242629);
+      background: var(--B-400, #1B1D20);
+    }
+
+    &:hover .ev-checkbox-mark {
+      border: 1px solid var(--B-200, #515356);
+      background: var(--B-300, #242629);
+    }
+  }
+
+  &[data-active="true"] {
+    .ev-checkbox-mark {
+      background: $ev--p-400;
+    }
+
+    &:hover .ev-checkbox-mark {
+      background: $ev--p-400;
+    }
+  }
+}

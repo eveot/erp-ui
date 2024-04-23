@@ -9,10 +9,6 @@ export default {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  args: {
-    dataSize: 'md',
-    dataStyle: 'dark'
-  },
   argTypes: {
     iconLeft: {
       options: IconNames
@@ -26,5 +22,7 @@ export default {
 export const Default: StoryObj<typeof Button> = {
   args: {
     children: 'Button',
+    dataSize: 'md',
+    dataStyle: 'dark'
   },
 };

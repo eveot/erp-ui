@@ -24,6 +24,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   ...props
 }) => {
 
+  // use this huh, because react-icons change filled icon color properly
   const getIconColor = () => {
     if (active && !disabled) return 'white'
     if (dataStyle === 'dark' && disabled) return '#515356'
