@@ -11,6 +11,7 @@ export default {
   tags: ['autodocs'],
   args: {
     dataSize: 'md',
+    dataStyle: 'dark'
   },
   argTypes: {
     iconLeft: {
@@ -22,7 +23,7 @@ export default {
   }
 } as Meta<typeof Button>;
 
-export const DefaultButton: StoryObj<typeof Button> = {
+export const Default: StoryObj<typeof Button> = {
   args: {
     children: 'Button',
   },

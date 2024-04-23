@@ -25,6 +25,7 @@
 
   &[data-size="sm"] {
     padding: 1.03rem 1.25rem;
+    border-radius: 0.5rem;
   }
 
   &[data-size="md"] {
@@ -58,6 +59,10 @@
 
     &:hover {
       @extend %active;
+
+      svg {
+        stroke: $ev--b-000;
+      }
     }
 
     &[disabled] {
