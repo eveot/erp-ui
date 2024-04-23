@@ -1,6 +1,6 @@
 import { Icon, IconName } from '@components/Icon'
 import { FC, PropsWithChildren } from 'react'
-import './styles.scss'
+import './style.scss'
 
 export interface TextInfoProps {
   active?: boolean

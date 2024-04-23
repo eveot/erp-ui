@@ -19,7 +19,7 @@ export const Default: Story = {
     placeholder: '',
     name: 'storybook',
     size: 'sm',
-    onChange: () => { },
+    onChange: (value) => { console.log(value) },
     type: 'text'
   },
 };

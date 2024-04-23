@@ -1,0 +1,33 @@
+@import "@assets/styles/app.scss";
+
+.ev-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.938rem;
+
+  @extend %label;
+  @extend %input;
+}
+
+%label {
+  > label {
+    font-size: 0.875rem;
+    color: $ev--b-100;
+  }
+}
+
+%input {
+  > input {
+    outline: none;
+    border: none;
+    background: none;
+  }
+
+  &[data-style="dark"] input {
+    color: $ev--b-100;
+  }
+
+  &[data-style="light"] input {
+    color: $ev--b-900;
+  }
+}
