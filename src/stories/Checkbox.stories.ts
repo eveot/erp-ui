@@ -5,6 +5,9 @@ export default {
   component: Checkbox,
   parameters: {
     layout: 'centered',
+    backgrounds: {
+      default: 'dark'
+    }
   },
   tags: ['autodocs'],
 } as Meta<typeof Checkbox>;
@@ -12,5 +15,8 @@ export default {
 export const Default: StoryObj<typeof Checkbox> = {
   args: {
     children: 'Content',
+    dataStyle: 'dark',
+    disabled: false,
+    active: false
   }
 };

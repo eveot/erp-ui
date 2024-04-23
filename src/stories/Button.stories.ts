@@ -23,6 +23,8 @@ export const Default: StoryObj<typeof Button> = {
   args: {
     children: 'Button',
     dataSize: 'md',
-    dataStyle: 'dark'
+    dataStyle: 'dark',
+    disabled: false,
+    active: false
   },
 };
