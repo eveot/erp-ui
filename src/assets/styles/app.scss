@@ -1,0 +1,11 @@
+@import "themes.scss";
+@import "colors.scss";
+@import "fonts.scss";
+
+* {
+  font-family: "SF UI Display", sans-serif;
+}
+
+.page {
+  background-color: var(--color-bg);
+}
