@@ -72,30 +72,34 @@
   }
 
   &[data-style="dark"] .ev-input-wrapper {
-    border: 1px solid var(--B-300, #242629);
-    background: var(--B-500, #17191C);
+    border: 1px solid $ev--b-200;
+    background: $ev--b-500;
     color: $ev--b-200;
 
     &:hover {
-      border: 1px solid var(--P-400, #3198F7);
-      background: var(--B-700, #121417);
+      border: 1px solid $ev--p-400;
+      background: $ev--b-700;
     }
 
     &:has(input:focus) {
-      border: 1px solid var(--P-500, #027EF6);
-      background: var(--B-700, #121417);
+      border: 1px solid $ev--p-500;
+      background: $ev--b-700;
       color: $ev--b-100;
     }
 
     &:has(input:disabled) {
-      border: 1px solid var(--B-400, #1B1D20);
-      background: var(--B-700, #121417);
+      border: 1px solid $ev--b-400;
+      background: $ev--b-700;
       color: #515356;
       cursor: not-allowed;
 
       input {
         color: #515356;
         cursor: not-allowed;
+
+        &::placeholder {
+          color: #515356;
+        }
       }
     }
 
@@ -119,19 +123,19 @@
     }
 
     &:has(input:focus) {
-      border: 1px solid var(--P-500, #027EF6);
-      background: var(--B-000, #FFF);
-      color: var(--B-300, #242629);
+      border: 1px solid $ev--p-500;
+      background: $ev--b-000;
+      color: $ev--b-300;
     }
 
     &:has(input:disabled) {
       border: 1px solid #EBEBED;
-      background: var(--B-000, #FFF);
-      color: var(--B-100, #D7D7D7);
+      background: $ev--b-000;
+      color: $ev--b-100;
       cursor: not-allowed;
 
       input {
-        color: var(--B-100, #D7D7D7);
+        color: $ev--b-100;
         cursor: not-allowed;
 
         &::placeholder {
@@ -141,7 +145,7 @@
     }
 
     input {
-      color: var(--B-300, #242629);
+      color: $ev--b-300;
 
       &::placeholder {
         color: #A5A6A8;
