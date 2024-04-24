@@ -6,6 +6,9 @@ export default {
   component: Input,
   parameters: {
     layout: 'centered',
+    backgrounds: {
+      default: 'dark'
+    }
   },
   tags: ['autodocs'],
   argTypes: {
@@ -20,6 +23,7 @@ export default {
 
 export const Default: StoryObj<typeof Input> = {
   args: {
-    label: 'Input',
+    label: 'Label',
+    placeholder: 'Placeholder',
   },
 };

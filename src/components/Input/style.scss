@@ -4,30 +4,148 @@
   display: flex;
   flex-direction: column;
   gap: 0.938rem;
+  transition: .3s;
+  cursor: text;
 
+  @extend %size;
   @extend %label;
   @extend %input;
 }
 
+%size {
+  &[data-size="xs"] .ev-input-wrapper {
+    padding: 0.72rem 1.25rem;
+  }
+
+  &[data-size="sm"] .ev-input-wrapper {
+    padding: 1.03rem 1.25rem;
+  }
+
+  &[data-size="md"] .ev-input-wrapper {
+    padding: 1.28rem 1.25rem;
+  }
+}
+
 %label {
-  > label {
+  label {
     font-size: 0.875rem;
     color: $ev--b-100;
+  }
+
+  &[data-style="dark"] label {
+    color: $ev--b-100
+  }
+
+  &[data-style="light"] label {
+    color: $ev--b-300
   }
 }
 
 %input {
-  > input {
+  input {
     outline: none;
     border: none;
     background: none;
+    transition: .3s;
+    font-weight: 500;
+
+    &::placeholder {
+      transition: .3s;
+    }
+
+    &:focus::placeholder {
+      opacity: 0;
+    }
   }
 
-  &[data-style="dark"] input {
-    color: $ev--b-100;
+  .ev-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 0.625rem;
+    padding: 1.28rem 1.25rem;
+    transition: .3s;
   }
 
-  &[data-style="light"] input {
-    color: $ev--b-900;
+  &[data-style="dark"] .ev-input-wrapper {
+    border: 1px solid var(--B-300, #242629);
+    background: var(--B-500, #17191C);
+    color: $ev--b-200;
+
+    &:hover {
+      border: 1px solid var(--P-400, #3198F7);
+      background: var(--B-700, #121417);
+    }
+
+    &:has(input:focus) {
+      border: 1px solid var(--P-500, #027EF6);
+      background: var(--B-700, #121417);
+      color: $ev--b-100;
+    }
+
+    &:has(input:disabled) {
+      border: 1px solid var(--B-400, #1B1D20);
+      background: var(--B-700, #121417);
+      color: #515356;
+      cursor: not-allowed;
+
+      input {
+        color: #515356;
+        cursor: not-allowed;
+      }
+    }
+
+    input {
+      color: $ev--b-100;
+
+      &::placeholder {
+        color: $ev--b-200
+      }
+    }
+  }
+
+  &[data-style="light"] .ev-input-wrapper {
+    border: 1px solid #EBEBED;
+    background: #FAFAFA;
+    color: #A5A6A8;
+
+    &:hover {
+      border: 1px solid #EBEBED;
+      background: #FFF;
+    }
+
+    &:has(input:focus) {
+      border: 1px solid var(--P-500, #027EF6);
+      background: var(--B-000, #FFF);
+      color: var(--B-300, #242629);
+    }
+
+    &:has(input:disabled) {
+      border: 1px solid #EBEBED;
+      background: var(--B-000, #FFF);
+      color: var(--B-100, #D7D7D7);
+      cursor: not-allowed;
+
+      input {
+        color: var(--B-100, #D7D7D7);
+        cursor: not-allowed;
+
+        &::placeholder {
+          color: #D7D7D7;
+        }
+      }
+    }
+
+    input {
+      color: var(--B-300, #242629);
+
+      &::placeholder {
+        color: #A5A6A8;
+      }
+    }
+  }
+
+  &[data-invalid="true"] .ev-input-wrapper {
+    border: 1px solid $ev--a-100 !important;
   }
 }

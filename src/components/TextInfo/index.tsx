@@ -9,6 +9,12 @@ export interface TextInfoProps {
   rightIcon?: IconName
 }
 
+export type TextInfo = {
+  label: string
+  leftIcon?: IconName
+  rightIcon?: IconName
+}
+
 export const TextInfo: FC<PropsWithChildren<TextInfoProps>> = ({ active, disabled, leftIcon, rightIcon, children }) => {
 
   return (
