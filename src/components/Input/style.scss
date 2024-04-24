@@ -56,6 +56,10 @@
     &:focus::placeholder {
       opacity: 0;
     }
+
+    &::-webkit-inner-spin-button {
+      display: none;
+    }
   }
 
   .ev-input-wrapper {

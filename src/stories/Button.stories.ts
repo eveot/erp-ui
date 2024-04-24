@@ -1,41 +1,30 @@
-import { ButtonLegacy } from '@legacycomponents/ButtonLegacy';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Button } from '@components/Button';
+import { IconNames } from '@components/Icon';
+import { Meta, StoryObj } from '@storybook/react';
 
-const meta = {
-  title: 'ButtonLegacy',
-  component: ButtonLegacy,
+
+export default {
+  component: Button,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof ButtonLegacy>;
+  argTypes: {
+    iconLeft: {
+      options: IconNames
+    },
+    iconRight: {
+      options: IconNames
+    }
+  }
+} as Meta<typeof Button>;
 
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {
+export const Default: StoryObj<typeof Button> = {
   args: {
-    mode: 'default',
     children: 'Button',
-    size: 'sm',
-    onClick: () => console.log('click')
-  },
-};
-
-export const Primary: Story = {
-  args: {
-    mode: 'primary',
-    children: 'Button',
-    size: 'md',
-    onClick: () => console.log('click')
-  },
-};
-
-export const White: Story = {
-  args: {
-    mode: 'white',
-    children: 'Button',
-    size: 'xlg',
-    onClick: () => console.log('click')
+    dataSize: 'md',
+    dataStyle: 'dark',
+    disabled: false,
+    active: false
   },
 };

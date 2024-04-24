@@ -1,6 +1,6 @@
 import { Icon, IconName } from '@components/Icon';
 import { TextInfo } from '@components/TextInfo';
-import { ChangeEvent, FC, useRef } from 'react';
+import { ChangeEventHandler, FC, useRef } from 'react';
 import './style.scss';
 
 export interface InputProps {
@@ -8,7 +8,7 @@ export interface InputProps {
   name?: string
   label?: string
   placeholder?: string
-  value?: string
+  value?: string | number
   size?: 'xs' | 'sm' | 'md'
   style?: 'light' | 'dark'
   invalid?: boolean
@@ -16,7 +16,7 @@ export interface InputProps {
   iconLeft?: IconName
   iconRight?: IconName
   textInfo: TextInfo
-  onChange?: (value: string) => void
+  onChange?: ChangeEventHandler<HTMLInputElement>
 }
 
 export const Input: FC<InputProps> = ({ 
@@ -24,19 +24,14 @@ export const Input: FC<InputProps> = ({
   size = 'md',
   invalid,
   label,
+  value,
   textInfo,
   iconLeft,
   iconRight,
   onChange,
-  ...props 
+  ...props
 }) => {
   const inputRef = useRef<HTMLInputElement>(null)
-
-  const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    if (onChange) {
-      onChange(e.target.value)
-    }
-  }
 
   return (
     <div
@@ -49,7 +44,7 @@ export const Input: FC<InputProps> = ({
       { label && <label>{ label }</label> }
       <div className="ev-input-wrapper">
         { iconLeft && <Icon name={ iconLeft } /> }
-        <input ref={ inputRef } onChange={onInputChange} {...props} />
+        <input ref={ inputRef } onChange={ onChange } value={ value } {...props} />
         { iconRight && <Icon name={iconRight } /> }
         { textInfo && <TextInfo {...textInfo} /> }
       </div>
