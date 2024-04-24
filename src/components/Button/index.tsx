@@ -1,5 +1,4 @@
 import { Icon, IconName } from '@components/Icon'
-import { getIconColor } from '@utils/getIconColor'
 import { FC, PropsWithChildren } from 'react'
 import './style.scss'
 
@@ -24,17 +23,11 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   active,
   ...props
 }) => {
-
-  const iconColor = getIconColor({
-    active: { value: active, color: 'white' },
-    disabled: { value: disabled, color: dataStyle === 'dark' ? '#515356' : '#D7D7D7' },
-  })
-  
   return (  
     <button className="ev-button" data-style={dataStyle} data-size={dataSize} disabled={disabled} data-active={active} {...props}>
-      { iconLeft && <Icon name={iconLeft} color={iconColor} /> }
+      { iconLeft && <Icon name={iconLeft} /> }
       {children}
-      { iconRight && <Icon name={iconRight} color={iconColor} /> }
+      { iconRight && <Icon name={iconRight} /> }
     </button>
   )
 }

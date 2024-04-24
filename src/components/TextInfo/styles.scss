@@ -1,0 +1,29 @@
+@import "@assets/styles/app.scss";
+
+.ev-text-info {
+  display: flex;
+  border-radius: 0.625rem;
+  padding: 0.625rem 0.9375rem;
+  gap: 0.31rem;
+  transition: .3s;
+  color: $ev--b-100;
+  background: $ev--b-400;
+  border: 1px solid $ev--b-300;
+
+  &:hover {
+    border: 1px solid $ev--b-200;
+    background: $ev--b-300;
+  }
+
+  &[data-active="true"] {
+    color: $ev--b-000;
+    border: 1px solid $ev--p-300;
+    background: $ev--p-400;
+  }
+
+  &[data-disabled="true"] {
+    color: $ev--b-200;
+    border: 1px solid $ev--b-400;
+    background: $ev--b-600;
+  }
+}
