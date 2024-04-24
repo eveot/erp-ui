@@ -1,30 +1,31 @@
-import { Button } from '@components/Button/Button';
+import { Button } from '@components/Button';
 import { IconNames } from '@components/Icon';
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta } from '@storybook/react';
 
 
 export default {
-  component: Button,
-  parameters: {
-    layout: 'centered',
-  },
-  tags: ['autodocs'],
-  args: {
-    dataSize: 'md',
-    dataStyle: 'dark'
-  },
-  argTypes: {
-    iconLeft: {
-      options: IconNames
+  export default {
+    component: Button,
+    parameters: {
+      layout: 'centered',
     },
-    iconRight: {
-      options: IconNames
+    tags: ['autodocs'],
+    argTypes: {
+      iconLeft: {
+        options: IconNames
+      },
+      iconRight: {
+        options: IconNames
+      }
     }
-  }
-} as Meta<typeof Button>;
+  } as Meta<typeof Button>;
 
-export const Default: StoryObj<typeof Button> = {
+  export const Default: StoryObj<typeof Button > = {
   args: {
     children: 'Button',
+      dataSize: 'md',
+        dataStyle: 'dark',
+          disabled: false,
+            active: false
   },
 };

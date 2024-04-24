@@ -1,4 +1,8 @@
 .ev-icon {
   display: flex;
   align-items: center;
+
+  svg {
+    transition: .3s;
+  }
 }
