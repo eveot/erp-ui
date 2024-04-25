@@ -1,0 +1,18 @@
+@import "@assets/styles/app.scss";
+
+.ev-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.62rem;
+  color: $ev--b-000;
+
+  &-box {
+    display: flex;
+    gap: 0.31rem;
+    background: $ev--b-000;
+    color: $ev--b-500;
+    padding: 0.625rem 0.9375rem;
+    border-radius: 0.625rem;
+    align-items: center;
+  }
+}
