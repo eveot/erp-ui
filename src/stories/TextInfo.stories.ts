@@ -11,10 +11,10 @@ export default {
     }
   },
   argTypes: {
-    leftIcon: {
+    iconLeft: {
       options: IconNames
     },
-    rightIcon: {
+    iconRight: {
       options: IconNames
     }
   },

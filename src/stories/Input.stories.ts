@@ -1,12 +1,14 @@
-import { Button } from '@components/Button';
 import { IconNames } from '@components/Icon';
+import { Input } from '@components/Input';
 import { Meta, StoryObj } from '@storybook/react';
 
-
 export default {
-  component: Button,
+  component: Input,
   parameters: {
     layout: 'centered',
+    backgrounds: {
+      default: 'dark'
+    }
   },
   tags: ['autodocs'],
   argTypes: {
@@ -17,14 +19,11 @@ export default {
       options: IconNames
     }
   }
-} as Meta<typeof Button>;
+} as Meta<typeof Input>;
 
-export const Default: StoryObj<typeof Button> = {
+export const Default: StoryObj<typeof Input> = {
   args: {
-    children: 'Button',
-    dataSize: 'md',
-    dataStyle: 'dark',
-    disabled: false,
-    active: false
+    label: 'Label',
+    placeholder: 'Placeholder',
   },
 };

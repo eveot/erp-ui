@@ -23,7 +23,7 @@ export const InputLegacy = (
   }: ButtonProps) => {
 
   return (
-    <InputLegacy
+    <input
       value={ value }
       type={ type }
       name={ name }
@@ -32,8 +32,8 @@ export const InputLegacy = (
       }
       className={
         [
-          "ev-InputLegacy",
-          `ev-InputLegacy-size--${ size }`
+          "ev-input-legacy",
+          `ev-input-legacy-size--${ size }`
         ].join(' ')
       }
       placeholder={ placeholder }
