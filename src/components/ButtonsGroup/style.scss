@@ -19,4 +19,8 @@
     border-bottom-right-radius: 0.625rem;
     margin-left: -1px;
   }
+
+  button:not(:first-child):not(:last-child) {
+    margin-left: -1px;
+  }
 }
