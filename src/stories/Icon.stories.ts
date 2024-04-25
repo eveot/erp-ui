@@ -5,9 +5,6 @@ export default {
   component: Icon,
   parameters: {
     layout: 'centered',
-    backgrounds: {
-      default: 'dark'
-    }
   },
   argTypes: {
     name: {
