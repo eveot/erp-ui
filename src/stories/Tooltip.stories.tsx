@@ -15,7 +15,8 @@ export default {
     iconRight: {
       options: IconNames
     }
-  }
+  },
+  tags: ['autodocs'],
 } as Meta<typeof Tooltip>;
 
 export const Preview: StoryObj<typeof Tooltip> = {

@@ -1,0 +1,22 @@
+@import "@assets/styles/app.scss";
+
+.ev-buttons-group {
+  display: flex;
+  width: 100%;
+
+  button {
+    border-radius: 0;
+    width: 100%;
+  }
+
+  button:first-child {
+    border-top-left-radius: 0.625rem;
+    border-bottom-left-radius: 0.625rem;
+  }
+
+  button:last-child {
+    border-top-right-radius: 0.625rem;
+    border-bottom-right-radius: 0.625rem;
+    margin-left: -1px;
+  }
+}
