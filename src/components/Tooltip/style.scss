@@ -1,0 +1,46 @@
+@import "@assets/styles/app.scss";
+
+.ev-tooltip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .ev-tooltip-box {
+    position: absolute;
+    color: $ev--b-500;
+    background: $ev--b-000;
+    padding: 0.625rem;
+    border-radius: 0.5rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s .3s, opacity .3s;
+    white-space: nowrap;
+    margin: 10px;
+    @extend %position;
+  }
+
+  &[data-show="true"] .ev-tooltip-box {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .3s;
+  }
+}
+
+%position {
+  &[data-align="left"] {
+    right: 100%;
+  }
+
+  &[data-align="right"] {
+    left: 100%;
+  }
+
+  &[data-align="top"] {
+    bottom: 100%;
+  }
+
+  &[data-align="bottom"] {
+    top: 100%;
+  }
+}
