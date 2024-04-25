@@ -7,6 +7,9 @@
   position: relative;
 
   .ev-tooltip-box {
+    display: flex;
+    justify-content: center;
+    gap: 0.31rem;
     position: absolute;
     color: $ev--b-500;
     background: $ev--b-000;
