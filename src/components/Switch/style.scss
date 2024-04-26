@@ -16,6 +16,15 @@
     }
   }
 
+  &:active {
+    background: $ev--p-400;
+
+    .ev-switch-radio {
+      background: $ev--b-100;
+      margin-left: 0.75rem;
+    }
+  }
+
   &-radio {
     width: 24px;
     height: 24px;

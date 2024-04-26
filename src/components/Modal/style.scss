@@ -110,6 +110,18 @@
 
         .close-button {
           cursor: pointer;
+
+          .ev-icon {
+            svg {
+              transition: .3s;
+            }
+
+            &:hover {
+              svg {
+                color: $ev--b-100 !important;
+              }
+            }
+          }
         }
       }
     }

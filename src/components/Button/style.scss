@@ -41,6 +41,11 @@
       border: 1px solid #373839;
     }
 
+
+    &:active {
+      @extend %active;
+    }
+
     &[disabled] {
       pointer-events: none;
       border: 1px solid $ev--b-400;
@@ -60,6 +65,11 @@
       svg {
         stroke: $ev--b-000;
       }
+    }
+
+
+    &:active {
+      @extend %active;
     }
 
     &[disabled] {
