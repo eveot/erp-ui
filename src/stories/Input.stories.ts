@@ -6,9 +6,6 @@ export default {
   component: Input,
   parameters: {
     layout: 'centered',
-    backgrounds: {
-      default: 'dark'
-    }
   },
   tags: ['autodocs'],
   argTypes: {

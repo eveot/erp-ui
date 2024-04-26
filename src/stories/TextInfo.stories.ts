@@ -6,9 +6,6 @@ export default {
   component: TextInfo,
   parameters: {
     layout: 'centered',
-    backgrounds: {
-      default: 'dark'
-    }
   },
   argTypes: {
     iconLeft: {
