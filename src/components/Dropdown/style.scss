@@ -1,0 +1,46 @@
+@import "@assets/styles/app.scss";
+
+.ev-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  align-items: center;
+
+  .ev-button:first-child .ev-icon:last-child {
+    transition: .3s;
+  }
+
+  &[data-open="true"] {
+    .ev-button:first-child .ev-icon:last-child {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .ev-dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s .3s, opacity .3s;
+    width: 100%;
+
+    .ev-button {
+      border-radius: 0;
+      border-top-width: 0;
+    }
+
+    .ev-button:first-child {
+      border-radius: 0.625rem 0.625rem 0 0;
+      border-top-width: 1px;
+    }
+
+    .ev-button:last-child {
+      border-radius: 0 0 0.625rem 0.625rem;
+      border-top-width: 1px;
+    }
+  }
+
+  &[data-open="true"] .ev-dropdown-content {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .3s
+  }
+}

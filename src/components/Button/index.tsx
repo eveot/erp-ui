@@ -4,8 +4,8 @@ import './style.scss'
 
 // "prop?" - because Partial<> broke the doc page
 export interface ButtonProps {
-  dataStyle?: 'dark' | 'light'
-  dataSize?: 'xs' | 'sm' | 'md'
+  style?: 'dark' | 'light'
+  size?: 'xs' | 'sm' | 'md'
   iconLeft?: IconName
   iconRight?: IconName
   disabled?: boolean
@@ -15,8 +15,8 @@ export interface ButtonProps {
 }
 
 export const Button: FC<PropsWithChildren<ButtonProps>> = ({
-  dataStyle = 'dark',
-  dataSize = 'md',
+  style = 'dark',
+  size = 'md',
   children,
   iconLeft,
   iconRight,
@@ -26,7 +26,15 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   ...props
 }) => {
   return (  
-    <button className="ev-button" data-style={dataStyle} data-size={dataSize} disabled={disabled} data-active={active} data-centered={centered} {...props}>
+    <button
+      className="ev-button"
+      data-style={ style }
+      data-size={ size }
+      disabled={ disabled }
+      data-active={ active }
+      data-centered={ centered }
+      {...props}
+    >
       { iconLeft && <Icon name={iconLeft} /> }
       {children}
       { iconRight && <Icon name={iconRight} /> }

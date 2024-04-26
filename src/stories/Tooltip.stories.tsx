@@ -24,7 +24,7 @@ export const Preview: StoryObj<typeof Tooltip> = {
   },
   render: (props) => (
     <Tooltip {...props}>
-      <Button dataSize='sm'>Tooltip</Button>
+      <Button size='sm'>Tooltip</Button>
     </Tooltip>
 )
 };

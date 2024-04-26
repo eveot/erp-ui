@@ -22,8 +22,8 @@ export default {
 export const Default: StoryObj<typeof Button> = {
   args: {
     children: 'Button',
-    dataSize: 'md',
-    dataStyle: 'dark',
+    size: 'md',
+    style: 'dark',
     disabled: false,
     active: false
   },

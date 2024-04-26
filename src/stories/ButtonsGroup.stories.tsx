@@ -14,9 +14,9 @@ export const Preview: StoryObj<typeof ButtonsGroup> = {
   args: {},
   render: (props) => (
     <ButtonsGroup {...props}>
-      <Button dataStyle='light'>Button 1</Button>
-      <Button dataStyle='light'>Button 2</Button>
-      <Button dataStyle='light'>Button 2</Button>
+      <Button style='light'>Button 1</Button>
+      <Button style='light'>Button 2</Button>
+      <Button style='light'>Button 2</Button>
     </ButtonsGroup>
   )
 };
