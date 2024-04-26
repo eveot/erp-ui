@@ -1,8 +1,8 @@
-import { Progress } from '@components/Progress';
+import { HorizontalProgress } from '@components/HorizontalProgress';
 import { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  component: Progress,
+  component: HorizontalProgress,
   parameters: {
     layout: 'centered',
   },
@@ -12,9 +12,9 @@ export default {
     }
   },
   tags: ['autodocs'],
-} as Meta<typeof Progress>;
+} as Meta<typeof HorizontalProgress>;
 
-export const Default: StoryObj<typeof Progress> = {
+export const Default: StoryObj<typeof HorizontalProgress> = {
   args: {
     progress: 50
   }
