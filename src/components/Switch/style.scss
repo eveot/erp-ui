@@ -1,0 +1,46 @@
+@import "@assets/styles/app.scss";
+
+.ev-switch {
+  width: 48px;
+  height: 24px;
+  border-radius: 23px;
+  background: $ev--b-500;
+  transition: .2s ease-out;
+  cursor: pointer;
+
+  &:hover {
+    background: $ev--b-400;
+
+    .ev-switch-radio {
+      background: $ev--b-200;
+    }
+  }
+
+  &-radio {
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    background: $ev--b-300;
+    transition: .2s ease-out;
+  }
+
+  &[data-toggle="true"] {
+    background: $ev--p-500;
+
+    .ev-switch-radio {
+      background: $ev--b-000;
+      margin-left: 1.5rem;
+    }
+  }
+
+  &[data-disabled="true"] {
+    background: $ev--b-500;
+    outline: 1px solid $ev--b-300;
+    cursor: not-allowed;
+
+    .ev-switch-radio {
+      background: $ev--b-300;
+      margin-left: 0;
+    }
+  }
+}

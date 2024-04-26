@@ -1,10 +1,10 @@
 import { Icon, IconName } from '@components/Icon';
 import { TextInfo } from '@components/TextInfo';
-import { ChangeEventHandler, FC, useRef } from 'react';
+import { ChangeEvent, FC, useRef } from 'react';
 import './style.scss';
 
 export interface InputProps {
-  type: 'text' | 'number' | 'password'
+  type?: 'text' | 'number' | 'password'
   name?: string
   label?: string
   placeholder?: string
@@ -16,12 +16,13 @@ export interface InputProps {
   iconLeft?: IconName
   iconRight?: IconName
   textInfo: TextInfo
-  onChange?: ChangeEventHandler<HTMLInputElement>
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
 export const Input: FC<InputProps> = ({ 
   style = 'dark',
   size = 'md',
+  type = 'text',
   invalid,
   label,
   value,
@@ -44,7 +45,7 @@ export const Input: FC<InputProps> = ({
       { label && <label>{ label }</label> }
       <div className="ev-input-wrapper">
         { iconLeft && <Icon name={ iconLeft } /> }
-        <input ref={ inputRef } onChange={ onChange } value={ value } {...props} />
+        <input ref={ inputRef } onChange={ onChange } value={ value } type={ type } {...props} />
         { iconRight && <Icon name={iconRight } /> }
         { textInfo && <TextInfo {...textInfo} /> }
       </div>

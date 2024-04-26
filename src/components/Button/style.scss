@@ -9,6 +9,7 @@
   cursor: pointer;
   width: 100%;
   transition: .3s;
+  white-space: nowrap;
 
   @extend %style;
   @extend %size;
@@ -72,6 +73,16 @@
   &[data-active="true"] {
     @extend %active;
     pointer-events: none;
+  }
+
+  &[data-centered="true"] {
+    justify-content: center;
+  }
+
+  &[data-centered="false"] {
+    .ev-icon:last-child {
+      margin-left: auto;
+    }
   }
 }
 
