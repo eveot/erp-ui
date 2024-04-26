@@ -20,6 +20,7 @@
     transition: visibility 0s .3s, opacity .3s;
     white-space: nowrap;
     margin: 10px;
+    pointer-events: none;
     @extend %position;
   }
 
