@@ -7,7 +7,7 @@ interface SelectorProps {
   disabled?: boolean
 }
 
-export const TextSelector: FC<SelectorProps> = ({ items }) => {
+export const TextSelector: FC<SelectorProps> = ({ items, disabled }) => {
 
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -21,9 +21,9 @@ export const TextSelector: FC<SelectorProps> = ({ items }) => {
   }
 
   return (
-    <div className="ev-selector">
+    <div className="ev-text-selector" data-disabled={ disabled }>
       <Icon name='TbSquareArrowLeftFilled' size='1.75rem' onClick={ () => onChangeItem('prev') } />
-      <div className="ev-selector-text">
+      <div className="ev-text-selector-value">
         { items?.find((_, index) => index === selectedIndex) }
       </div>
       <Icon name='TbSquareArrowRightFilled' size='1.75rem' onClick={ () => onChangeItem('next') } />

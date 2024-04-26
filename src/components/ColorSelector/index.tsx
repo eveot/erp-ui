@@ -73,9 +73,9 @@ interface SelectorProps {
   disabled?: boolean
 }
 
-export const ColorSelector: FC<SelectorProps> = ({ perSwitch }) => {
+export const ColorSelector: FC<SelectorProps> = ({ perSwitch, disabled }) => {
   const [value, setValue] = useState(0);
-  const colorsPerSwitch = perSwitch ?? 7;
+  const colorsPerSwitch = perSwitch || 7;
   
   const updateSwitcher = (variant: 'prev' | 'next') => {
     let nextIndex;
@@ -95,9 +95,9 @@ export const ColorSelector: FC<SelectorProps> = ({ perSwitch }) => {
   });
   
   return (
-    <div className="ev-selector">
+    <div className="ev-color-selector" data-disabled={ disabled }>
       <Icon name='TbSquareArrowLeftFilled' size='1.75rem' onClick={ () => updateSwitcher('prev') } />
-      <div className="ev-selector-text">
+      <div className="ev-color-selector-colors">
         {
           activeColors.map((color, index) => (
             <div
