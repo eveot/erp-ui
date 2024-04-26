@@ -1,0 +1,28 @@
+@import "@assets/styles/app.scss";
+
+.ev-captcha {
+  display: flex;
+  border-radius: 0.6rem;
+  border: 1px solid $ev--b-300;
+  color: $ev--b-000;
+  overflow: hidden;
+
+  &-value {
+    background: $ev--b-600;
+    padding: 1.4375rem;
+  }
+
+  &-value:not(:last-child) {
+    border-right: 1px solid $ev--b-300;
+  }
+
+  &-value[data-active="true"][data-success="true"] {
+    background: #121816;
+    color: $ev--a-300
+  }
+
+  &-value[data-active="true"][data-success="false"] {
+    background: #231417;
+    color: $ev--a-100;
+  }
+}
