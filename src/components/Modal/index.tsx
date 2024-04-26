@@ -16,6 +16,7 @@ interface ModalProps {
 export const Modal: FC<PropsWithChildren<ModalProps>> = ({ title, show, style = 'dark', backdrop, image = null, description, children, width, onClose }) => {
 
   const closeIconColor = style === 'dark' ? '#515356' : '#242629'
+  const placeholderIconColor = style === 'dark' ? '#242629' : '#D7D7D7'
 
   return (
     <div className='ev-modal' data-show={ show } data-style={ style }>
@@ -33,7 +34,7 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({ title, show, style = 
                       image ? (
                         <img src={ image } />
                       ) : (
-                        <Icon name='TbPhoto' size='3.4375rem' />
+                        <Icon name='TbPhotoFilled' size='3.4375rem' color={ placeholderIconColor } />
                       )
                     }
                   </div>

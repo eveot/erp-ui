@@ -76,6 +76,7 @@
     border-radius: 0.625rem;
     width: 27rem;
     z-index: 1;
+    position: relative;
 
     .ev-modal-header {
       display: flex;
@@ -101,6 +102,10 @@
         .modal-image {
           align-self: center;
           max-width: 9.375rem;
+
+          img {
+            width: 100%;
+          }
         }
 
         h1 {
@@ -110,6 +115,9 @@
 
         .close-button {
           cursor: pointer;
+          position: absolute;
+          top: 1.25rem;
+          right: 1.25rem;
 
           .ev-icon {
             svg {
