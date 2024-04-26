@@ -11,6 +11,7 @@ export default defineConfig({
       '@legacycomponents': path.resolve(__dirname, './src/legacycomponents'),
       '@assets': path.resolve(__dirname, './src/assets'),
       '@utils': path.resolve(__dirname, './src/utils'),
+      '@hooks': path.resolve(__dirname, './src/hooks'),
     }
   },
   server: {

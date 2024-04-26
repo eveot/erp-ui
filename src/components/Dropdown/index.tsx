@@ -1,20 +1,22 @@
 import { Button } from '@components/Button'
-import { FC, MouseEvent, PropsWithChildren } from 'react'
+import { useOuterClick } from '@hooks/useOuterClick'
+import { FC, PropsWithChildren } from 'react'
 import './style.scss'
 
 interface DropdownProps {
   open?: boolean
   label?: string
   triggerSize: 'xs' | 'sm' | 'md'
-  onClick: (event: MouseEvent<HTMLButtonElement>) => void
+  onOpen?: () => void
+  onClose?: () => void
 }
 
-export const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({ label, triggerSize = 'md', open, children }) => {
-  // TODO: onMouseLeave?
-  // TODO: on outer click close
+export const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({ label, triggerSize = 'md', open, children, onOpen, onClose }) => {
+
+  const { ref } = useOuterClick<HTMLDivElement>(() => onClose && onClose())
 
   return (
-    <div className="ev-dropdown" data-open={ open }>
+    <div className="ev-dropdown" ref={ ref } data-open={ open } onClick={ open ? onClose : onOpen }>
       <Button iconRight='TbCaretDownFilled' size={ triggerSize }>
         { label }
       </Button>

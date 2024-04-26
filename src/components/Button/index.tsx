@@ -1,9 +1,10 @@
 import { Icon, IconName } from '@components/Icon'
-import { FC, PropsWithChildren } from 'react'
+import { FC, MouseEvent, PropsWithChildren } from 'react'
 import './style.scss'
 
 // "prop?" - because Partial<> broke the doc page
 export interface ButtonProps {
+  name?: string
   style?: 'dark' | 'light'
   size?: 'xs' | 'sm' | 'md'
   iconLeft?: IconName
@@ -11,10 +12,11 @@ export interface ButtonProps {
   disabled?: boolean
   active?: boolean
   centered?: boolean
-  onClick?: () => void
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void
 }
 
 export const Button: FC<PropsWithChildren<ButtonProps>> = ({
+  name,
   style = 'dark',
   size = 'md',
   children,
@@ -27,6 +29,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
 }) => {
   return (  
     <button
+      name={ name }
       className="ev-button"
       data-style={ style }
       data-size={ size }
