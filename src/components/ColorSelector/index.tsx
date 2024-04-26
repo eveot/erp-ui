@@ -1,5 +1,5 @@
 import { Icon } from '@components/Icon';
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import './style.scss';
 export const colorsDefault = [
   [28, 31, 33],
@@ -71,9 +71,10 @@ export const colorsDefault = [
 interface SelectorProps {
   perSwitch?: number;
   disabled?: boolean
+  onChange: (value: number) => void
 }
 
-export const ColorSelector: FC<SelectorProps> = ({ perSwitch, disabled }) => {
+export const ColorSelector: FC<SelectorProps> = ({ perSwitch, disabled, onChange }) => {
   const [value, setValue] = useState(0);
   const colorsPerSwitch = perSwitch || 7;
   
@@ -86,6 +87,10 @@ export const ColorSelector: FC<SelectorProps> = ({ perSwitch, disabled }) => {
     }
     setValue(nextIndex);
   };
+
+  useEffect(() => {
+    onChange(value);
+  }, [value])
   
   const startColorIndex = (value - Math.floor(colorsPerSwitch / 2) + colorsDefault.length) % colorsDefault.length;
   

@@ -1,13 +1,14 @@
 import { Icon } from '@components/Icon';
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import './style.scss';
 
 interface SelectorProps {
   items?: Array<string>
   disabled?: boolean
+  onChange?: (text: string, index: number) => void
 }
 
-export const TextSelector: FC<SelectorProps> = ({ items, disabled }) => {
+export const TextSelector: FC<SelectorProps> = ({ items, disabled, onChange }) => {
 
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -19,6 +20,13 @@ export const TextSelector: FC<SelectorProps> = ({ items, disabled }) => {
       setSelectedIndex((selectedIndex + 1) % items.length);
     }
   }
+
+  useEffect(() => {
+    if (onChange) {
+      const text = items ? items[selectedIndex] : '';
+      onChange(text, selectedIndex);
+    }
+  }, [selectedIndex]);
 
   return (
     <div className="ev-text-selector" data-disabled={ disabled }>
