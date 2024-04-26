@@ -1,22 +1,21 @@
-import { Slider } from '@components/Slider';
+import { Progress } from '@components/Progress';
 import { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  component: Slider,
+  component: Progress,
   parameters: {
     layout: 'centered',
   },
   argTypes: {
-    value: {
+    progress: {
       control: 'range'
     }
   },
   tags: ['autodocs'],
-} as Meta<typeof Slider>;
+} as Meta<typeof Progress>;
 
-export const Default: StoryObj<typeof Slider> = {
+export const Default: StoryObj<typeof Progress> = {
   args: {
-    label: 'Label',
-    value: 30
+    progress: 50
   }
 };

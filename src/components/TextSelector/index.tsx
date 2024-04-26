@@ -3,12 +3,11 @@ import { FC, useState } from 'react';
 import './style.scss';
 
 interface SelectorProps {
-  type?: 'text' | 'color'
   items?: Array<string>
   disabled?: boolean
 }
 
-export const Selector: FC<SelectorProps> = ({ type = 'text', items }) => {
+export const TextSelector: FC<SelectorProps> = ({ items }) => {
 
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -24,13 +23,9 @@ export const Selector: FC<SelectorProps> = ({ type = 'text', items }) => {
   return (
     <div className="ev-selector">
       <Icon name='TbSquareArrowLeftFilled' size='1.75rem' onClick={ () => onChangeItem('prev') } />
-      {
-        type === 'text' && (
-          <div className="ev-selector-text">
-            { items?.find((_, index) => index === selectedIndex) }
-          </div>
-        )
-       }
+      <div className="ev-selector-text">
+        { items?.find((_, index) => index === selectedIndex) }
+      </div>
       <Icon name='TbSquareArrowRightFilled' size='1.75rem' onClick={ () => onChangeItem('next') } />
     </div>
   );
