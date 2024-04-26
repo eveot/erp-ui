@@ -71,7 +71,7 @@ export const colorsDefault = [
 interface SelectorProps {
   perSwitch?: number;
   disabled?: boolean
-  onChange: (value: number) => void
+  onChange?: (value: number) => void
 }
 
 export const ColorSelector: FC<SelectorProps> = ({ perSwitch, disabled, onChange }) => {
@@ -89,7 +89,9 @@ export const ColorSelector: FC<SelectorProps> = ({ perSwitch, disabled, onChange
   };
 
   useEffect(() => {
-    onChange(value);
+    if (onChange) {
+      onChange(value);
+    }
   }, [value])
   
   const startColorIndex = (value - Math.floor(colorsPerSwitch / 2) + colorsDefault.length) % colorsDefault.length;
