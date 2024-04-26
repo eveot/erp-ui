@@ -9,7 +9,7 @@ interface TooltipProps {
   iconRight?: IconName
 }
 
-export const Tooltip: FC<PropsWithChildren<TooltipProps>> = ({ align, text, children, iconLeft, iconRight }) => {
+export const Tooltip: FC<PropsWithChildren<TooltipProps>> = ({ align = 'bottom', text, children, iconLeft, iconRight }) => {
   const [show, setShow] = useState(false);
 
   return (

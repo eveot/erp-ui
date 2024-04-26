@@ -10,6 +10,7 @@ export interface ButtonProps {
   iconRight?: IconName
   disabled?: boolean
   active?: boolean
+  centered?: boolean
   onClick?: () => void
 }
 
@@ -20,11 +21,12 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   iconLeft,
   iconRight,
   disabled,
+  centered = true,
   active,
   ...props
 }) => {
   return (  
-    <button className="ev-button" data-style={dataStyle} data-size={dataSize} disabled={disabled} data-active={active} {...props}>
+    <button className="ev-button" data-style={dataStyle} data-size={dataSize} disabled={disabled} data-active={active} data-centered={centered} {...props}>
       { iconLeft && <Icon name={iconLeft} /> }
       {children}
       { iconRight && <Icon name={iconRight} /> }
