@@ -1,6 +1,6 @@
 import { Icon, IconName } from '@components/Icon';
 import { TextInfo } from '@components/TextInfo';
-import { ChangeEventHandler, FC, useRef } from 'react';
+import { ChangeEvent, FC, useRef } from 'react';
 import './style.scss';
 
 export interface InputProps {
@@ -15,8 +15,8 @@ export interface InputProps {
   disabled?: boolean
   iconLeft?: IconName
   iconRight?: IconName
-  textInfo?: TextInfo
-  onChange?: ChangeEventHandler<HTMLInputElement>
+  textInfo: TextInfo
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
 export const Input: FC<InputProps> = ({ 

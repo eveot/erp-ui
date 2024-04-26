@@ -4,7 +4,7 @@ import { Meta, StoryObj } from '@storybook/react';
 export default {
   component: Modal,
   parameters: {
-    layout: 'padded',
+    layout: 'fullscreen',
   },
   argTypes: {
     image: {
