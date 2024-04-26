@@ -1,0 +1,33 @@
+@import "@assets/styles/app.scss";
+
+.ev-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.33rem;
+
+  &-color {
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 0.25rem;
+
+    &[data-selected='true'] {
+      border: 1px solid #FFF;
+    }
+  }
+
+  &-text {
+    color: #FFF;
+  }
+
+  .ev-icon {
+    cursor: pointer;
+
+    svg {
+      color: $ev--b-200 !important;
+    }
+
+    &:hover svg {
+      color: $ev--b-000 !important;
+    }
+  }
+}
