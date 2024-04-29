@@ -11,7 +11,18 @@ export default defineConfig({
       name: '@eveot/ui',
       entry: path.resolve(__dirname, './src/index.ts'),
       formats: ['es', 'umd'],
-      fileName: (format) => `eveot-ui.${format}.js`,
+      fileName: 'index',
+    },
+    rollupOptions: {
+      external: ['react', 'react-dom', 'react-icons', 'react-icons/tb', '@tabler/icons-react'],
+      output: {
+          globals: {
+              react: 'React',
+              'react-dom': 'ReactDOM',
+              'react-icons': 'IconBaseProps',
+              'react-icons/tb': 'tbicons'
+          }
+      }
     }
   },
   server: {
