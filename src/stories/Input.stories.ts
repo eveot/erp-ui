@@ -1,24 +1,26 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import { IconNames } from '@components/Icon';
+import { Input } from '@components/Input';
+import { Meta, StoryObj } from '@storybook/react';
 
-import { Input } from "../components";
-
-const meta = {
-  title: 'Input',
+export default {
   component: Input,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof Input>;
+  argTypes: {
+    iconLeft: {
+      options: IconNames
+    },
+    iconRight: {
+      options: IconNames
+    }
+  }
+} as Meta<typeof Input>;
 
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {
+export const Default: StoryObj<typeof Input> = {
   args: {
-    value: '',
-    placeholder: '',
-    name: 'storybook',
-    size: 'sm'
+    label: 'Label',
+    placeholder: 'Placeholder',
   },
 };

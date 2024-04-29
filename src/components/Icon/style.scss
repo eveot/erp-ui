@@ -1,0 +1,8 @@
+.ev-icon {
+  display: flex;
+  align-items: center;
+
+  svg {
+    transition: fill .3s, stroke .3s;
+  }
+}

@@ -1,29 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import { Checkbox } from '@components/Checkbox';
+import { Meta, StoryObj } from '@storybook/react';
 
-import { Checkbox } from "../components";
-
-const meta = {
-  title: 'Checkbox',
+export default {
   component: Checkbox,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof Checkbox>;
+} as Meta<typeof Checkbox>;
 
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const IsActive: Story = {
+export const Default: StoryObj<typeof Checkbox> = {
   args: {
-    isActive: true,
     children: 'Content',
-  },
-};
-
-export const IsDeactivated: Story = {
-  args: {
-    isActive: false,
-    children: 'Content',
-  },
+  }
 };

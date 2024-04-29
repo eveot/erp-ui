@@ -1,23 +1,25 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import { Modal } from '@components/Modal';
+import { Meta, StoryObj } from '@storybook/react';
 
-import Modal from "../components/Modal";
-
-const meta = {
-  title: 'Modal',
+export default {
   component: Modal,
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
   },
-  tags: ['autodocs'],
-} satisfies Meta<typeof Modal>;
+  argTypes: {
+    image: {
+      control: 'text',
+    },
+    width: {
+      type: 'string',
+    }
+  }
+} as Meta<typeof Modal>;
 
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {
+export const Default: StoryObj<typeof Modal> = {
   args: {
-    title: 'Title',
-    subtitle: 'Subtitle',
-    type: 'confirmation'
-  },
+    title: 'Label',
+    description: 'Description',
+    image: undefined
+  }
 };

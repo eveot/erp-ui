@@ -1,39 +1,30 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import { Button } from '@components/Button';
+import { IconNames } from '@components/Icon';
+import { Meta, StoryObj } from '@storybook/react';
 
-import { Button } from "../components";
 
-const meta = {
-  title: 'Button',
+export default {
   component: Button,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof Button>;
+  argTypes: {
+    iconLeft: {
+      options: IconNames
+    },
+    iconRight: {
+      options: IconNames
+    }
+  }
+} as Meta<typeof Button>;
 
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {
+export const Default: StoryObj<typeof Button> = {
   args: {
-    mode: 'default',
     children: 'Button',
-    size: 'sm'
-  },
-};
-
-export const Primary: Story = {
-  args: {
-    mode: 'primary',
-    children: 'Button',
-    size: 'md'
-  },
-};
-
-export const White: Story = {
-  args: {
-    mode: 'white',
-    children: 'Button',
-    size: 'xlg'
+    dataSize: 'md',
+    dataStyle: 'dark',
+    disabled: false,
+    active: false
   },
 };
