@@ -8,8 +8,10 @@ export default defineConfig({
   plugins: [react(), dts({ insertTypesEntry: true, exclude: ['**/*.stories.tsx', '**/*.stories.ts'] })],
   build: {
     lib: {
+      name: '@eveot/ui',
       entry: path.resolve(__dirname, './src/index.ts'),
-      formats: ['es'],
+      formats: ['es', 'umd'],
+      fileName: (format) => `eveot-ui.${format}.js`,
     }
   },
   server: {
