@@ -2,10 +2,16 @@ import react from '@vitejs/plugin-react';
 import * as path from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import libCss from 'vite-plugin-libcss';
+
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), dts({ insertTypesEntry: true, exclude: ['**/*.stories.tsx', '**/*.stories.ts'] })],
+  plugins: [
+    react(), 
+    dts({ insertTypesEntry: true, exclude: ['**/*.stories.tsx', '**/*.stories.ts'] }),
+    libCss()
+  ],
   build: {
     lib: {
       name: '@eveot/ui',
