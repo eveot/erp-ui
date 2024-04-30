@@ -22,7 +22,7 @@ export const Captcha: FC<CaptchaProps> = ({ value, onFinish }) => {
   useEffect(() => {
     if (inputArray.length === 0) return;
     const keyInclude = array.join('').includes(inputArray.join(''))
-    if (inputArray.length === array.length) {
+    if (keyInclude && inputArray.length === array.length) {
       setCaptchaFinished(true)
     } else if (!keyInclude) {
       setCaptchaSuccess(false)
