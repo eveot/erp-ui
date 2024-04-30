@@ -1,22 +1,22 @@
 {
   "name": "@eveot/erp-ui",
-  "version": "2.1.2",
+  "version": "0.0.2",
   "author": "Eveot Developers <developers@eveot.com>",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "files": [
     "dist"
   ],
   "type": "module",
   "module": "./dist/index.d.ts",
-  "main": "./dist/eveot-ui.es.js",
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bugs": {
-    "url": "https://github.com/eveot/ui/issues"
+    "url": "https://github.com/eveot/erp-ui/issues"
   },
-  "homepage": "https://github.com/eveot/ui#readme",
+  "homepage": "https://github.com/eveot/erp-ui#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eveot/ui.git"
+    "url": "git+https://github.com/eveot/erp-ui.git"
   },
   "scripts": {
     "dev": "vite",
