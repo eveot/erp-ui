@@ -1,18 +1,11 @@
 import react from '@vitejs/plugin-react';
-import { fileURLToPath } from "node:url";
 import * as path from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 
-const filesNeedToExclude = ["src/components/Icon/*"];
-
-const filesPathToExclude = filesNeedToExclude.map((src) => {
-  return fileURLToPath(new URL(src, import.meta.url));
-});
-
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), dts({ insertTypesEntry: true, exclude: ['**/*.stories.tsx', '**/*.stories.ts'], rollupTypes: true })],
+  plugins: [react(), dts({ insertTypesEntry: true, exclude: ['**/*.stories.tsx', '**/*.stories.ts'] })],
   build: {
     lib: {
       name: '@eveot/ui',
@@ -21,19 +14,13 @@ export default defineConfig({
       fileName: 'index',
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react-icons', 'react-icons/tb', '@tabler/icons-react', ...filesPathToExclude],
+      external: ['react', 'react-dom', 'react-icons', 'react-icons/tb', '@tabler/icons-react'],
       output: {
-          globals: {
-              react: 'React',
-          //     'react-dom': 'ReactDOM',
-          //     'react-icons': 'IconBaseProps',
-          //     'react-icons/tb': 'tbicons'
-          },
           minifyInternalExports: true
       }
     },
     minify: 'terser',
-    cssMinify: 'esbuild',
+    cssMinify: 'lightningcss',
   },
   server: {
     fs: {
