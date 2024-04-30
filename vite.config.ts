@@ -22,7 +22,11 @@ export default defineConfig({
     rollupOptions: {
       external: ['react', 'react-dom', 'react-icons', 'react-icons/tb', '@tabler/icons-react'],
       output: {
-          minifyInternalExports: true
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+        },
+        minifyInternalExports: true
       }
     },
     minify: 'terser',
