@@ -1,5 +1,5 @@
 import * as evicons from '@components/Icon/icons'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { IconBaseProps } from 'react-icons'
 import * as tbicons from 'react-icons/tb'
 import './style.scss'
@@ -19,19 +19,15 @@ export const IconNames = Object.keys(evicons).concat(Object.keys(tbicons))
 
 export const Icon: FC<IconProps> = ({ name, color = 'currentColor', size = '1.063rem', onClick }) => {
 
-  const getParsedIcon = (): React.ElementType | null => {
-    if (Object.keys(evicons).includes(name)) {
-      return evicons[name as EveotIconName];
-    } else {
-      return tbicons[name as TablerIconName];
-    }
-  };
+  const ParsedIcon = Object.keys(evicons).includes(name) ? evicons[name as EveotIconName] : tbicons[name as TablerIconName]
 
-  const ParsedIcon = getParsedIcon();
+  // const getParsedIcon = (): React.ElementType | null => Object.keys(evicons).includes(name) ? evicons[name as EveotIconName] : tbicons[name as TablerIconName];
+  // const ParsedIcon = getParsedIcon();
 
   if (!ParsedIcon) {
     return <p style={{color: '#F44336'}}>ICON:ERR</p>;
   }
+
   return (
     <div className="ev-icon" onClick={onClick}>
       <ParsedIcon size={size} color={color} />
