@@ -1,7 +1,7 @@
-import * as evicons from '@components/Icon/icons'
 import { FC } from 'react'
 import { IconBaseProps } from 'react-icons'
 import * as tbicons from 'react-icons/tb'
+import * as evicons from './icons'
 import './style.scss'
 
 type TablerIconName = keyof typeof tbicons
