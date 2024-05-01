@@ -25,6 +25,8 @@ export default defineConfig({
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
+          'react-icons': 'ReactIcons',
+          'react-icons/tb': 'tbicons',
         },
         minifyInternalExports: true
       }
