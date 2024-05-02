@@ -35,12 +35,14 @@
       background: $ev--b-000;
       border: 1px solid #EBEBED;
 
-      h1 {
-        color: $ev--b-300;
-      }
+      .ev-modal-header {
+        h1 {
+          color: $ev--b-300;
+        }
 
-      p {
-        color: $ev--b-200;
+        p {
+          color: $ev--b-200;
+        }
       }
     }
 
@@ -54,12 +56,14 @@
       border: 1px solid $ev--b-300;
       background: $ev--b-800;
 
-      h1 {
-        color: $ev--b-100;
-      }
+      .ev-modal-header {
+        h1 {
+          color: $ev--b-100;
+        }
 
-      p {
-        color: $ev--b-200;
+        p {
+          color: $ev--b-200;
+        }
       }
     }
 
