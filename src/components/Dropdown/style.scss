@@ -9,7 +9,7 @@
   }
 
   &[data-open="true"] {
-    .ev-button:first-child .ev-icon:last-child {
+    > .ev-button:first-child .ev-icon:last-child {
       transform: rotate(-180deg);
     }
   }
