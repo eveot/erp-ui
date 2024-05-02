@@ -19,7 +19,7 @@ export const TooltipLegacy = ({
     <div
       onMouseMove={ () => setShow(true) }
       onMouseLeave={ () => setShow(false) }
-      className="ev-tooltip"
+      className="ev-tooltip-legacy"
       style={{
         flexDirection: (tip.position.split('-')[0] === 'left' || tip.position.split('-')[0] === 'right') ? 'row' : 'column'
       }}
@@ -28,9 +28,9 @@ export const TooltipLegacy = ({
       <div
         className={
           [
-            "ev-tooltip-hint",
-            show && `ev-tooltip-hint--show`,
-            `ev-tooltip-hint--position-${ tip.position }`,
+            "ev-tooltip-legacy-hint",
+            show && `ev-tooltip-legacy-hint--show`,
+            `ev-tooltip-legacy-hint--position-${ tip.position }`,
           ].join(' ')
         }
       >
