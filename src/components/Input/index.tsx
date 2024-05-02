@@ -15,7 +15,7 @@ export interface InputProps {
   disabled?: boolean
   iconLeft?: IconName
   iconRight?: IconName
-  textInfo: TextInfo
+  textInfo?: TextInfo
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void
 }
 

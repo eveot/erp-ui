@@ -25,6 +25,7 @@
     overflow: hidden;
     border: 1px solid $ev--b-300;
     box-sizing: border-box;
+    z-index: 1;
 
     .ev-button {
       border-radius: 0;
