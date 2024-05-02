@@ -17,6 +17,8 @@ export interface InputProps {
   iconRight?: IconName
   textInfo?: TextInfo
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void
+  min?: number
+  max?: number
 }
 
 export const Input: FC<InputProps> = ({ 
@@ -34,6 +36,19 @@ export const Input: FC<InputProps> = ({
 }) => {
   const inputRef = useRef<HTMLInputElement>(null)
 
+  const _onChange = (event: ChangeEvent<HTMLInputElement>) => {
+    if (type === 'number') {
+      const value = Number(event.currentTarget.value)
+      event.currentTarget.value = String(value).replace(/[^\d]/g, '')
+      if (props.max && value > props.max) {
+        event.currentTarget.value = String(props.max)
+      } else if (props.min && value < props.min) {
+        event.currentTarget.value = String(props.min)
+      }
+    }
+    onChange && onChange(event)
+  }
+
   return (
     <div
       className="ev-input"
@@ -45,7 +60,7 @@ export const Input: FC<InputProps> = ({
       { label && <label>{ label }</label> }
       <div className="ev-input-wrapper">
         { iconLeft && <Icon name={ iconLeft } /> }
-        <input ref={ inputRef } onChange={ onChange } value={ value } type={ type } {...props} />
+        <input ref={ inputRef } onChange={ _onChange } value={ value } type={ type !== 'number' ? type : 'text' } {...props} />
         { iconRight && <Icon name={iconRight } /> }
         { textInfo && <TextInfo {...textInfo} /> }
       </div>
