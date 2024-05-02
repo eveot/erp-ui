@@ -9,11 +9,11 @@
   &[data-style="light"] {
     input::-webkit-slider-runnable-track {
       background: linear-gradient(to right, $ev--p-500 0%, $ev--p-500 var(--track-width), $ev--b-000 0%);
+      border: 1px solid var(--B-100, #D7D7D7);
     }
 
     input::-webkit-slider-thumb {
-      border: 1px solid $ev--b-100;
-      box-sizing: content-box;
+      outline: 1px solid $ev--b-100;
       margin-top: -4px;
     }
   }
