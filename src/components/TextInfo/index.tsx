@@ -20,7 +20,7 @@ export const TextInfo: FC<PropsWithChildren<TextInfoProps>> = ({ active, disable
   return (
     <div className="ev-text-info" data-active={active} data-disabled={disabled}>
       { iconLeft &&  <Icon name={ iconLeft } /> }
-      { children }
+      <p>{ children }</p>
       { iconRight && <Icon name={ iconRight } /> }
     </div>
   )
