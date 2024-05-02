@@ -10,16 +10,17 @@ interface DropdownProps {
   triggerSize?: 'xs' | 'sm' | 'md'
   triggerCentered?: boolean
   triggerIcon?: IconName
+  triggerWidth?: string
   onOpen?: () => void
   onClose?: () => void
 }
 
-export const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({ label, triggerIcon, triggerSize = 'sm', triggerCentered = false, open, children, onOpen, onClose }) => {
+export const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({ label, triggerIcon, triggerWidth = '13.125rem', triggerSize = 'sm', triggerCentered = false, open, children, onOpen, onClose }) => {
 
   const { ref } = useOuterClick<HTMLDivElement>(() => onClose && onClose())
 
   return (
-    <div className="ev-dropdown" ref={ ref } data-open={ open } onClick={ open ? onClose : onOpen }>
+    <div className="ev-dropdown" ref={ ref } style={{ width: triggerWidth }} data-open={ open } onClick={ open ? onClose : onOpen }>
       <Button iconLeft={ triggerIcon } iconRight='TbCaretDownFilled' size={ triggerSize } centered={ triggerCentered }>
         { label }
       </Button>
