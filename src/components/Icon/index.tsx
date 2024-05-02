@@ -15,22 +15,33 @@ export interface IconProps {
   onClick?: () => void
 }
 
+type ParsedIcon = {
+  type: 'eveot' | 'tabler'
+  icon: React.ElementType
+}
+
 export const IconNames = Object.keys(evicons).concat(Object.keys(tbicons))
 
 export const Icon: FC<IconProps> = ({ name, color = 'currentColor', size = '1.063rem', onClick }) => {
 
-  const ParsedIcon = Object.keys(evicons).includes(name) ? evicons[name as EveotIconName] : tbicons[name as TablerIconName]
+  const ParsedIcon: ParsedIcon = {
+    type: Object.keys(evicons).includes(name) ? 'eveot' : 'tabler',
+    icon: Object.keys(evicons).includes(name) ? evicons[name as EveotIconName] : tbicons[name as TablerIconName],
+  }
 
-  // const getParsedIcon = (): React.ElementType | null => Object.keys(evicons).includes(name) ? evicons[name as EveotIconName] : tbicons[name as TablerIconName];
-  // const ParsedIcon = getParsedIcon();
-
-  if (!ParsedIcon) {
+  if (!ParsedIcon.icon) {
     return <p style={{color: '#F44336'}}>ICON:ERR</p>;
   }
 
   return (
     <div className="ev-icon" onClick={onClick}>
-      <ParsedIcon size={size} color={color} />
+      {
+        ParsedIcon.type === 'eveot' ? (
+          <ParsedIcon.icon width={size} height={size} color={color} />
+        ) : (
+          <ParsedIcon.icon size={size} color={color} />
+        )
+      }
     </div>
   )
 }
