@@ -1,7 +1,6 @@
 @import "themes.scss";
 @import "colors.scss";
-@import "fonts.scss";
-
+@import url('https://fonts.cdnfonts.com/css/sf-ui-display');
 
 * {
   font-family: "SF UI Display", sans-serif;
@@ -16,10 +15,6 @@
   -ms-user-select: none;
   user-select: none;
   box-sizing: border-box;
-
-  &::placeholder {
-    font-family: "SF UI Display", sans-serif;
-  }
 }
 
 .page {

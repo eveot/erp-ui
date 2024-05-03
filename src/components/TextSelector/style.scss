@@ -1,0 +1,42 @@
+@import "@assets/styles/app.scss";
+
+.ev-text-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.33rem;
+
+  &-color {
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 0.25rem;
+
+    &[data-selected='true'] {
+      border: 1px solid #FFF;
+    }
+  }
+
+  &-value {
+    color: #FFF;
+  }
+
+  .ev-icon {
+    cursor: pointer;
+    color: $ev--b-200;
+
+    &:hover {
+      color: $ev--b-000;
+    }
+  }
+
+  &[data-disabled="true"] {
+    pointer-events: none;
+
+    .ev-text-selector-value {
+      color: $ev--b-200;
+    }
+
+    .ev-icon {
+      color: $ev--b-300;
+    }
+  }
+}

@@ -2,6 +2,7 @@
 
 .ev-text-info {
   display: flex;
+  align-items: center;
   border-radius: 0.625rem;
   padding: 0.625rem 0.9375rem;
   gap: 0.31rem;
@@ -15,10 +16,12 @@
     background: $ev--b-300;
   }
 
+  &:active {
+    @extend %active;
+  }
+
   &[data-active="true"] {
-    color: $ev--b-000;
-    border: 1px solid $ev--p-300;
-    background: $ev--p-400;
+    @extend %active;
   }
 
   &[data-disabled="true"] {
@@ -26,4 +29,10 @@
     border: 1px solid $ev--b-400;
     background: $ev--b-600;
   }
+}
+
+%active {
+  color: $ev--b-000;
+  border: 1px solid $ev--p-300;
+  background: $ev--p-400;
 }

@@ -27,8 +27,8 @@ export const ModalLegacy = ({
     <div
       className={
         [
-          "ev-ModalLegacy",
-          `ev-ModalLegacy-mode--${type}`
+          "ev-modal-legacy",
+          `ev-modal-legacy",-mode--${type}`
         ].join(' ')
       }
     >

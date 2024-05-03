@@ -6,6 +6,7 @@
       "@legacycomponents/*": ["./legacycomponents/*"],
       "@assets/*": ["./assets/*"],
       "@utils/*": ["./utils/*"],
+      "@hooks/*": ["./hooks/*"],
     }
   }
 }

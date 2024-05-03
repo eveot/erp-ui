@@ -19,7 +19,7 @@ export const TipLegacy = ({
     <div
       className={
         [
-          "ev-tip",
+          "ev-tip-legacy",
           `ev-tip-mode--${mode}`,
         ].join(' ')
       }

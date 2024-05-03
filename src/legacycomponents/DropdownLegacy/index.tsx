@@ -17,15 +17,15 @@ export const DropdownLegacy = ({
 
   return (
     <div
-      className="ev-DropdownLegacy"
+      className="ev-dropdown-legacy"
       onMouseLeave={ () => setOpen(false) }
     >
       <div
         onClick={ () => setOpen(!open) }
         className={
           [
-            "ev-DropdownLegacy-box",
-            open && `ev-DropdownLegacy-box--show`,
+            "ev-dropdown-legacy-box",
+            open && `ev-dropdown-legacy-box--show`,
           ].join(' ')
         }
       >
@@ -37,8 +37,8 @@ export const DropdownLegacy = ({
       <div
         className={
           [
-            "ev-DropdownLegacy-callbacks",
-            open && `ev-DropdownLegacy-callbacks--show`,
+            "ev-dropdown-legacy-callbacks",
+            open && `ev-dropdown-legacy-callbacks--show`,
           ].join(' ')
         }
       >
@@ -47,7 +47,7 @@ export const DropdownLegacy = ({
             callback => (
               <div
                 onClick={ callback.callback.click }
-                className='ev-DropdownLegacy-callbacks--box'
+                className='ev-dropdown-legacy-callbacks--box'
                 onMouseMove={ callback.callback.mouseMove }
                 onMouseLeave={ callback.callback.mouseLeave }
               >

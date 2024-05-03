@@ -13,12 +13,12 @@ export const RadioLegacy = (
 
   return (
     <label
-      className="ev-RadioLegacy"
+      className="ev-radio-legacy"
     >
       <div className={
         [
-          "ev-RadioLegacy--box",
-          isActive && "ev-RadioLegacy--box_active",
+          "ev-radio-legacy--box",
+          isActive && "ev-radio-legacy--box_active",
         ].join(' ')
       }>
         <div />

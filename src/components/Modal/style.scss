@@ -35,12 +35,14 @@
       background: $ev--b-000;
       border: 1px solid #EBEBED;
 
-      h1 {
-        color: $ev--b-300;
-      }
+      .ev-modal-header {
+        h1 {
+          color: $ev--b-300;
+        }
 
-      p {
-        color: $ev--b-200;
+        p {
+          color: $ev--b-200;
+        }
       }
     }
 
@@ -54,12 +56,14 @@
       border: 1px solid $ev--b-300;
       background: $ev--b-800;
 
-      h1 {
-        color: $ev--b-100;
-      }
+      .ev-modal-header {
+        h1 {
+          color: $ev--b-100;
+        }
 
-      p {
-        color: $ev--b-200;
+        p {
+          color: $ev--b-200;
+        }
       }
     }
 
@@ -76,6 +80,7 @@
     border-radius: 0.625rem;
     width: 27rem;
     z-index: 1;
+    position: relative;
 
     .ev-modal-header {
       display: flex;
@@ -101,6 +106,10 @@
         .modal-image {
           align-self: center;
           max-width: 9.375rem;
+
+          img {
+            width: 100%;
+          }
         }
 
         h1 {
@@ -110,6 +119,21 @@
 
         .close-button {
           cursor: pointer;
+          position: absolute;
+          top: 1.25rem;
+          right: 1.25rem;
+
+          .ev-icon {
+            svg {
+              transition: .3s;
+            }
+
+            &:hover {
+              svg {
+                color: $ev--b-100 !important;
+              }
+            }
+          }
         }
       }
     }

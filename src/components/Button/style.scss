@@ -2,6 +2,7 @@
 
 .ev-button {
   display: flex;
+  height: fit-content;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.875rem;
@@ -27,6 +28,7 @@
 
   &[data-size="md"] {
     padding: 1.28rem 1.25rem;
+    font-size: 1rem;
   }
 }
 
@@ -39,6 +41,11 @@
     &:hover {
       background: $ev--b-300;
       border: 1px solid #373839;
+    }
+
+
+    &:active {
+      @extend %active;
     }
 
     &[disabled] {
@@ -60,6 +67,11 @@
       svg {
         stroke: $ev--b-000;
       }
+    }
+
+
+    &:active {
+      @extend %active;
     }
 
     &[disabled] {

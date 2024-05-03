@@ -29,7 +29,7 @@ export const ButtonLegacy = ({
       onClick={onClick}
       className={
         [
-          "ev-button",
+          "ev-button-legacy",
           `ev-button-mode--${mode}`,
           `ev-button-size--${size}`,
           disabled && `ev-button-disabled--${mode}`

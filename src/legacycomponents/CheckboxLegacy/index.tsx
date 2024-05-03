@@ -18,7 +18,7 @@ export const CheckboxLegacy = (
 
   return (
     <label
-      className="ev-checkbox"
+      className="ev-checkbox-legacy"
       onClick={ onClick }
     >
       <div className={
