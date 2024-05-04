@@ -84,7 +84,6 @@
 
   &[data-active="true"] {
     @extend %active;
-    pointer-events: none;
   }
 
   &[data-centered="true"] {
