@@ -38,11 +38,10 @@
     background: $ev--b-500;
     color: $ev--b-000;
 
-    &:hover {
+    &:hover:not([data-active="true"]) {
       background: $ev--b-300;
       border: 1px solid #373839;
     }
-
 
     &:active {
       @extend %active;
