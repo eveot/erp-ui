@@ -19,6 +19,7 @@ export interface InputProps {
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void
   min?: number
   max?: number
+  autoFocus?: boolean
 }
 
 export const Input: FC<InputProps> = ({ 
@@ -27,7 +28,6 @@ export const Input: FC<InputProps> = ({
   type = 'text',
   invalid,
   label,
-  value,
   textInfo,
   iconLeft,
   iconRight,
@@ -60,7 +60,7 @@ export const Input: FC<InputProps> = ({
       { label && <label>{ label }</label> }
       <div className="ev-input-wrapper">
         { iconLeft && <Icon name={ iconLeft } /> }
-        <input ref={ inputRef } onChange={ _onChange } value={ value } type={ type !== 'number' ? type : 'text' } {...props} />
+        <input ref={ inputRef } onChange={ _onChange } type={ type !== 'number' ? type : 'text' } {...props} />
         { iconRight && <Icon name={iconRight } /> }
         { textInfo && <TextInfo {...textInfo} /> }
       </div>
