@@ -8,7 +8,6 @@
   font-size: 0.875rem;
   border-radius: 0.625rem;
   cursor: pointer;
-  width: 100%;
   transition: .3s;
   white-space: nowrap;
 
@@ -33,6 +32,7 @@
 }
 
 %style {
+
   &[data-style="dark"] {
     border: 1px solid $ev--b-300;
     background: $ev--b-500;
@@ -43,7 +43,7 @@
       border: 1px solid #373839;
     }
 
-    &:active {
+    &:active:not([data-disabled="true"]) {
       @extend %active;
     }
 
@@ -68,12 +68,7 @@
       }
     }
 
-
-    &:active {
-      @extend %active;
-    }
-
-    &[disabled] {
+    &[disabled="true"] {
       pointer-events: none;
       border: 1px solid $ev--b-100;
       background: #F3F2F7;
