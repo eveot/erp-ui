@@ -1,0 +1,44 @@
+name: CI/CD for Storybook
+
+on:
+  push:
+    branches:
+      - dev
+  pull_request:
+    branches:
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [22.x]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Upgrade dependencies
+      run: yarn upgrade
+
+    - name: Build Storybook
+      run: yarn build-storybook
+
+    - name: Create CNAME file
+      run: echo 'storybook.eveot.com' > ./storybook-static/CNAME
+
+    - name: Deploy Storybook to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./storybook-static
